@@ -3,12 +3,9 @@
 - 兼容nodejs最新版本（可直接一键部署至Vercel）
 - 解决大部分布局细节问题，增加“暗黑模式”， 默认自动切换亮/暗模式（点击“太阳/月亮”图标可手动切换），
 - 增加“高级功能”点击显示/隐藏
-- 增加近百条远程配置，新增[sub-web聚合API](https://github.com/youshandefeiyang/sub-web-api) ，增加从短链接中获取订阅信息并返回至前端界面，增加上传自定义远程配置/JS进阶排序节点/JS进阶筛选节点等功能，感兴趣的朋友可以自建API服务，增加URL传参设置自定义后端<br/>
+- 增加近百条远程配置
+- 增加从短链接中获取订阅信息并返回至前端界面
 
-
-## 效果预览：
-
-![avatar](https://raw.githubusercontent.com/youshandefeiyang/webcdn/main/sub-web-modify.GIF)
 
 ## Requirements
 
