@@ -285,7 +285,7 @@ export default {
           "自动判断客户端": "auto",
         },
         customBackend: {
-          "自建官方原版后端": "https://los-angeles.aki.cloudns.ch/subconverter",
+          "自建官方原版后端": defaultBackend,
           "肥羊增强型后端【vless reality+hy1+hy2】": "https://url.v1.mk",
           "肥羊备用后端【vless reality+hy1+hy2】": "https://sub.d1.mk",
         },
@@ -683,7 +683,7 @@ export default {
       form: {
         sourceSubUrl: "",
         clientType: "",
-        customBackend: "https://los-angeles.aki.cloudns.ch/subconverter",
+        customBackend: defaultBackend,
         remoteConfig: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/config/ACL4SSR_Online_Full_NoAuto.ini",
         excludeRemarks: "",
         includeRemarks: "",
