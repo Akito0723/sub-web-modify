@@ -1,0 +1,38 @@
+name: Auto Release
+
+on:
+  - workflow_dispatch
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Get next version
+        id: next-latest-release
+        uses: reecetech/version-increment@2024.4.4
+        with:
+          scheme: calver
+
+      - name: Build With
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.20.0'
+
+      - run: |
+          npm install -g yarn@1.22.19
+          yarn install
+          yarn build
+          tar -czvf release-${{ steps.next-latest-release.outputs.v-version }}.tgz dist
+
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: false
+          prerelease: false
+          tag_name: ${{ steps.next-latest-release.outputs.v-version }}
+          name: Release ${{ steps.next-latest-release.outputs.v-version }}
+          files: ./release-${{ steps.next-latest-release.outputs.v-version }}.tgz
